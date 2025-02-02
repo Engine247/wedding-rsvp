@@ -278,9 +278,11 @@ if submitted:
 
                  <hr>
                         <div class="details">
-            		   <h3><strong>Hotel Options</strong></h3>
-			   <p><strong>Teaneck Marriott | Glenpointe, NJ </strong> (<a href="https://www.marriott.com/reservation/rateListMenu.mi" target="_blank">book hotel</a>)</p>
-
+            		   <h3><strong>Hotel Recommendations</strong></h3>
+            		   <h2><strong>GLENPOINTE | TEANECK, NJ</strong></h2>
+			   <p><strong>Marriott </strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reservations</a>)</p>
+			   <p><strong>Hampton Inn & Suites </strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
+			   <p><strong>Homewood Suites by Hilton </strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
                         </div>
                         <hr>
 
