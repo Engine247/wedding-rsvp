@@ -39,7 +39,7 @@ st.markdown(f"""
         .divider-thin {{
             border-bottom: 2px solid {gold_color};
             margin: 10px auto;
-            width: 50%;
+            width: 60%;
         }}
 
         .event-container, .form-container {{
@@ -58,7 +58,6 @@ st.markdown(f"""
         .event-details {{
             font-size: 20px;
             text-align: center;
-            color: white;
         }}
 
         /* === CHANGED: Adjusted Input Box Width and Alignment === */
@@ -69,7 +68,7 @@ st.markdown(f"""
 
         /* === CHANGED: Increased Font Size for Radio Buttons === */
         .stRadio label {{
-            font-size: 18px !important;
+            font-size: 20px !important;
             font-weight: bold;
             color: white !important;
         }}
@@ -117,16 +116,22 @@ st.markdown(f"""
     </style>
 """, unsafe_allow_html=True)
 
-# Title and Names (Centered)
-st.markdown('<div class="title">WEDDING | RSVP</div>', unsafe_allow_html=True)
-st.markdown('<div class="names">Heather & Rob</div>', unsafe_allow_html=True)
 
+# === CHANGED: RSVP Section Now Matches Width and Font Styling ===
+st.markdown('</div>', unsafe_allow_html=True)
+### st.markdown('<div class="title">* * * RSVP * * *</div>', unsafe_allow_html=True)
+### st.markdown('</div>', unsafe_allow_html=True)
+
+
+# Title and Names (Centered)
+# st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
+st.markdown('<div class="names">Wedding Day | Heather & Rob</div>', unsafe_allow_html=True)
 # Double Gold Line (Thick then Thin)
 st.markdown('<div class="divider-thick"></div>', unsafe_allow_html=True)
-st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
+
 
 # Wedding Details (Centered)
-st.markdown('<div class="event-container">', unsafe_allow_html=True)
+## st.markdown('<div class="event-container">', unsafe_allow_html=True)
 st.markdown('<div class="event-title">The Venetian</div>', unsafe_allow_html=True)
 st.markdown('<div class="event-details">546 River Dr, Garfield, NJ 07026</div>', unsafe_allow_html=True)
 st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
@@ -135,12 +140,8 @@ st.markdown('<div class="event-details"><strong>6:00 PM</strong> - Arrival</div>
 st.markdown('<div class="event-details"><strong>6:30 PM</strong> - Ceremony</div>', unsafe_allow_html=True)
 st.markdown('<div class="event-details"><strong>7:00 PM</strong> - Cocktails</div>', unsafe_allow_html=True)
 st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
-st.markdown('<div class="divider-thick"></div>', unsafe_allow_html=True)
+st.markdown('<div class="names">*** RSVP ***</div>', unsafe_allow_html=True)
 
-# === CHANGED: RSVP Section Now Matches Width and Font Styling ===
-st.markdown('</div>', unsafe_allow_html=True)
-st.markdown('<div class="names">* * * GUEST DETAILS * * *</div>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # === CHANGED: Centered Radio Buttons to 60% Width ===
 st.markdown("<div style='width: 60%; margin: auto;'>", unsafe_allow_html=True)
@@ -162,6 +163,7 @@ if num_guests in [1, 2]:
     comments = st.text_area("Questions | Comments | Concerns", placeholder="(e.g., dietary restrictions, family considerations, etc.)")
 
 st.markdown('</div>', unsafe_allow_html=True)  # Close form container
+
 
 # Submit Button (Green)
 submitted = st.button("Submit")
