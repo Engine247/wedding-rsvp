@@ -118,7 +118,8 @@ st.markdown('<div class="divider-thick"></div>', unsafe_allow_html=True)
 # === Wedding Details Section (Centered) ===
 st.markdown('<div class="event-container">', unsafe_allow_html=True) # OPEN event container
 st.markdown('<div class="event-title">The Venetian</div>', unsafe_allow_html=True)
-st.markdown('<div class="event-details">546 River Dr, Garfield, NJ 07026</div>', unsafe_allow_html=True)
+st.markdown('<div class="event-details">546 River Drive</div>', unsafe_allow_html=True)
+st.markdown('<div class="event-details">Garfield, NJ 07026</div>', unsafe_allow_html=True)
 ### st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)  # CLOSE event-container
 
@@ -176,7 +177,7 @@ if num_guests in [1, 2, "Unable to attend"]:
 st.markdown('</div>', unsafe_allow_html=True)  # Close form-container
 
 # === Submit Button ===
-submitted = st.button("Submit")
+submitted = st.button("RSVP")
 
 
 
