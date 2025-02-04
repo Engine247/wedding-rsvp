@@ -184,9 +184,18 @@ submitted = st.button("RSVP")
 ###  <<< Email Function >>>
 
 # **Sender Email Configuration**
-sender_email_1 = "rob.haddad.222@gmail.com"  
-sender_email_2 = "heathervictoria412@gmail.com"
-sender_password = "yzmj yhno npkd oxvz"  # Google App Password (replace with env variable later)
+
+# Load secrets from Streamlit Cloud
+sender_email_1 = st.secrets["email"]["sender_email_1"]
+sender_email_2 = st.secrets["email"]["sender_email_2"]
+sender_password = st.secrets["email"]["gmail_app_password"]
+
+# Hard-coded APP password / used for local
+# sender_email_1 = "rob.haddad.222@gmail.com"  
+# sender_email_2 = "heathervictoria412@gmail.com"
+# sender_password = "yzmj yhno npkd oxvz"  # Google App Password (replace with env variable later)
+
+
 
 # **Function to Send Email**
 def send_email(to_email, subject, body):
