@@ -78,14 +78,12 @@ st.markdown(f"""
         }}
 
         .stTextInput > div > div > input {{
-            border: 2px solid {gold_color} !important;
             border-radius: 5px;
             width: 100%;
             font-family: 'Georgia Pro', Georgia, serif;
         }}
 
         .stTextArea > div > textarea {{
-            border: 2px solid {gold_color} !important;
             border-radius: 5px !important;
             background-color: #1E1E1E !important;
             color: white !important;
@@ -122,16 +120,16 @@ st.markdown('<div class="event-container">', unsafe_allow_html=True) # OPEN even
 st.markdown('<div class="event-title">The Venetian</div>', unsafe_allow_html=True)
 st.markdown('<div class="event-details">546 River Dr, Garfield, NJ 07026</div>', unsafe_allow_html=True)
 ### st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
-### st.markdown('</div>', unsafe_allow_html=True)  # CLOSE event-container
+st.markdown('</div>', unsafe_allow_html=True)  # CLOSE event-container
 
 # === Date Container
-### st.markdown('<div class="event-container">', unsafe_allow_html=True) # OPEN event container
+st.markdown('<div class="event-container">', unsafe_allow_html=True) # OPEN event container
 st.markdown('<div class="event-title">April 12, 2025</div>', unsafe_allow_html=True)
-st.markdown('<div class="event-details"><strong>6:00 PM</strong> - Arrival</div>', unsafe_allow_html=True)
-st.markdown('<div class="event-details"><strong>6:30 PM</strong> - Ceremony</div>', unsafe_allow_html=True)
-st.markdown('<div class="event-details"><strong>7:00 PM</strong> - Cocktails</div>', unsafe_allow_html=True)
+st.markdown('<div class="event-details"><strong>6:00 PM : </strong> Arrival</div>', unsafe_allow_html=True)
+st.markdown('<div class="event-details"><strong>6:30 PM : </strong>Ceremony</div>', unsafe_allow_html=True)
+st.markdown('<div class="event-details"><strong>7:00 PM : </strong>Cocktails</div>', unsafe_allow_html=True)
 ### st.markdown('<div class="divider-thin"></div>', unsafe_allow_html=True)
-### st.markdown('</div>', unsafe_allow_html=True)  # CLOSE event-container
+st.markdown('</div>', unsafe_allow_html=True)  # CLOSE event-container
 
 
 # === RSVP FORM CONTAINER (Re-Added) ===
@@ -181,16 +179,36 @@ st.markdown('</div>', unsafe_allow_html=True)  # Close form-container
 submitted = st.button("Submit")
 
 # === Email Function (No Change) ===
+
 def send_email(to_email, subject, body):
     try:
-        server = smtplib.SMTP("smtp.gmail.com", 587)
+        # Gmail SMTP Configuration
+        smtp_server = "smtp.gmail.com"
+        smtp_port = 587
+        sender_email = "rob.haddad.222@gmail.com"  # Gmail
+        sender_password = os.getenv("GMAIL_APP_PASSWORD")  
+        ### sender_password = os.getenv("yzmj yhno npkd oxvz")  # APP Password
+
+        server = smtplib.SMTP(smtp_server, smtp_port)
         server.starttls()
-        server.login("rob.haddad.222@gmail.com", "yzmj yhno npkd oxvz")
+        server.login(sender_email, sender_password)
 
         msg = MIMEMultipart()
-        msg["From"] = '"Heather & Rob | April-12-2025" <rob.haddad.222@gmail.com>'
+        msg["From"] = f'"Heather & Rob | April-12-2025" <{sender_email}>'
         msg["To"] = to_email
         msg["Subject"] = subject
+
+        # Attach HTML Email Content
+        msg.attach(MIMEText(body, "html", "utf-8"))
+
+        # Send Email
+        server.sendmail(sender_email, [to_email, "heathervictoria412@gmail.com"], msg.as_string())
+        server.quit()
+
+    except Exception as e:
+        st.error(f"Failed to send email: {e}")
+
+
 
 
         # HTML-Formatted Email Body
@@ -287,4 +305,11 @@ if submitted:
     elif num_guests == 2 and not guest2_name:
         st.error("Please enter the name of your additional guest.")
     else:
-        st.success("RSVP Confirmed! Check your email for details.")
+        st.markdown(
+            "<div style='width: 60%; margin: auto; text-align: center;'>"
+            "<div style='background-color: #143D2A; padding: 10px; border-radius: 8px; color: white;'>"
+            " RSVP Confirmed! Check your email for details."
+            "</div></div>", 
+            unsafe_allow_html=True
+    )
+
