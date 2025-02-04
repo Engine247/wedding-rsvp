@@ -315,12 +315,12 @@ def send_email(to_email, subject, body):
                 </div>
                 <hr>
 
-                <h2>Hotel Recommendations</h2>
-                <div class="hotel-links">
-                    <p><strong>GLENPOINTE | TEANECK, NJ</strong></p>
-                    <p><a href="https://www.marriott.com" target="_blank">Marriott (Reservations)</a></p>
-                    <p><a href="https://www.hilton.com/en/hotels/tetnwhw-homewood-suites-teaneck-glenpointe" target="_blank">Homewood Suites by Hilton (Reservations)</a></p>
-                    <p><a href="https://www.hilton.com/en/hotels/tetnwhx-hampton-inn-teaneck-glenpointe/" target="_blank">Hampton Inn & Suites (Reservations)</a></p>
+                <h2 style="text-align: center; font-size: 20px; color: #B8860B;">Hotel Recommendations</h2>
+                <h4 style="text-align: center; font-size: 18px; color: #444;">GLENPOINTE | TEANECK, NJ</h4>
+                <div style="text-align: left; font-size: 14px; line-height: 1.5;">
+                    <p><strong>Marriott</strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reservations</a>)</p>
+                    <p><strong>Hampton Inn & Suites</strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
+                    <p><strong>Homewood Suites by Hilton</strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
                 </div>
 
                 <hr>
@@ -418,7 +418,8 @@ if submitted:
                         <hr>
                         <div class="details">
                             <h3><strong>The Venetian</strong></h3>
-                            <p>546 River Dr, Garfield, NJ 07026</p>
+                            <p>546 River Drive</p>
+                            <p>Garfield, NJ 07026</p>
                             <p>___________________<p>
                             <h3><strong>April 12, 2025</strong> </h3>
                             <p><strong>6:00 PM  </strong> Arrival</p>
@@ -431,9 +432,10 @@ if submitted:
                         <div class="details">
             		   <h3><strong>Hotel Recommendations</strong></h3>
             		   <h2><strong>GLENPOINTE | TEANECK, NJ</strong></h2>
-			   <p><strong>Marriott </strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reservations</a>)</p>
-			   <p><strong>Hampton Inn & Suites </strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
-			   <p><strong>Homewood Suites by Hilton </strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
+                            <p>___________________<p>
+			   <p><strong>Marriott </strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reserve</a>)</p>
+			   <p><strong>Hampton Inn & Suites </strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
+			   <p><strong>Homewood Suites by Hilton </strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
                         </div>
                         <hr>
 
@@ -446,8 +448,8 @@ if submitted:
                         <hr>
 
                         <div class="details">
-                            <h3>We are excited to celebrate with you!</p
-                            <h2>With Love,<br> Heather & Rob</p>
+                            <h3>We are excited to celebrate with you!</h3>
+                            <h2>With Love,<br> Heather & Rob</h2>
                         </div>
 
                     </div>
@@ -459,9 +461,11 @@ if submitted:
 
                 st.markdown(
                     f"""
-                    <div style='text-align: center; margin-top: 20px;'>
-                        <h3 style='color: #B8860B;'>RSVP Confirmed | Check your Email for Details!</h3>
+                    <div style='width: 60%; margin: auto; text-align: center; margin-top: 15px;'>
+                        <h3 style='color: #B8860B; font-size: 18px;'>RSVP Confirmed | Check your Email for Details!</h3>
                     </div>
+
+
                     """,
                     unsafe_allow_html=True
                 )
@@ -561,9 +565,9 @@ if submitted:
             # Display On-Screen Message for Guest
             st.markdown(
                 f"""
-                <div style='text-align: center; margin-top: 30px;'>
-                    <h2 style='color: #B8860B;'>Thank you for your RSVP</h2>
-                    <p style='font-size: 16px; color: #DDD;'>That's unfortunate news, but we understand and appreciate your response.</p>
+                <div style='width: 60%; margin: auto; text-align: center; margin-top: 20px;'>
+                    <h2 style='color: #B8860B; font-size: 20px;'>Thank you for your RSVP</h2>
+                    <p style='font-size: 14px; color: #DDD;'>That's unfortunate news, but we truly appreciate your response.</p>
                 </div>
                 """,
                 unsafe_allow_html=True
