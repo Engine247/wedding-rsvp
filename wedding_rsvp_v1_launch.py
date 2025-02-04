@@ -27,7 +27,7 @@ st.markdown(f"""
             text-align: center;
             font-family: 'Great Vibes', cursive;
             color: {gold_color};
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }}
 
         .names {{
@@ -41,17 +41,17 @@ st.markdown(f"""
         .divider-thick {{
             border-bottom: 4px solid {gold_color};
             margin: 5px auto;
-            width: 55%;
+            width: 60%;
         }}
 
         .divider-thin {{
             border-bottom: 2px solid {gold_color};
-            margin: 5px auto;
-            width: 55%;
+            margin: 10px auto;
+            width: 60%;
         }}
 
         .event-container, .form-container {{
-            max-width: 50%;
+            max-width: 60%;
             margin: auto;
             text-align: center;
             font-family: 'Georgia Pro', Georgia, serif;
