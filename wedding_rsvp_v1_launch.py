@@ -238,7 +238,10 @@ def send_email(to_email, subject, body):
         msg_host["Subject"] = host_subject
         msg_host.attach(MIMEText(host_body, "html", "utf-8"))
 
-        # Send Email to Host
+        # Send Email to Guest & Both Hosts
+        all_recipients = [to_email, sender_email_1, sender_email_2]
+        server.sendmail(sender_email_1, all_recipients, msg.as_string())
+
         server.sendmail(sender_email_1, sender_email_2, msg_host.as_string())
 
         # Close SMTP Server
@@ -327,9 +330,9 @@ def send_email(to_email, subject, body):
                 <h2 style="text-align: center; font-size: 20px; color: #B8860B;">Hotel Recommendations</h2>
                 <h4 style="text-align: center; font-size: 18px; color: #444;">GLENPOINTE | TEANECK, NJ</h4>
                 <div style="text-align: left; font-size: 14px; line-height: 1.5;">
-                    <p><strong>Marriott</strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reservations</a>)</p>
-                    <p><strong>Hampton Inn & Suites</strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
-                    <p><strong>Homewood Suites by Hilton</strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reservations</a>)</p>
+                    <p><strong>Marriott</strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reserve</a>)</p>
+                    <p><strong>Hampton Inn & Suites</strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
+                    <p><strong>Homewood Suites by Hilton</strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
                 </div>
 
                 <hr>
@@ -351,6 +354,9 @@ def send_email(to_email, subject, body):
         st.error(f"Failed to send email: {e}")
 
 
+# +++ FOR LATER >>>  IF WE 
+###  MARRIOTT GENERAL LINK: 
+###			   <p><strong>Marriott | Secondary Option</strong> (<a ###href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-###glenpointe/overview/" target="_blank">Reserve</a>)</p>
 
 
 # === Handle Submission ===
@@ -442,7 +448,7 @@ if submitted:
             		   <h3><strong>Hotel Recommendations</strong></h3>
             		   <h2><strong>GLENPOINTE | TEANECK, NJ</strong></h2>
                             <p>___________________<p>
-			   <p><strong>Marriott </strong> (<a href="https://www.marriott.com/en-us/hotels/ewrgp-teaneck-marriott-at-glenpointe/overview/" target="_blank">Reserve</a>)</p>
+			   <p><strong>Marriott | 50 Room Block</strong> (<a href="https://book.passkey.com/event/50981531/owner/10758828/home?utm_campaign=296582441" target="_blank">Reserve</a>)</p>
 			   <p><strong>Hampton Inn & Suites </strong> (<a href="https://www.hilton.com/en/hotels/ewrtehx-hampton-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
 			   <p><strong>Homewood Suites by Hilton </strong> (<a href="https://www.hilton.com/en/hotels/ewrtghw-homewood-suites-teaneck-glenpointe/" target="_blank">Reserve</a>)</p>
                         </div>
@@ -543,7 +549,7 @@ if submitted:
                 <div class="container">
                     <h1>Thank You for Your RSVP</h1>
                     
-                    <p>We're sorry you won't be able to attend, but we truly appreciate your response.</p>
+                    <p>We're sorry you won't be able to attend.  We truly appreciate your response and hope to see you soon.</p>
                     
                     <hr>
                                         
